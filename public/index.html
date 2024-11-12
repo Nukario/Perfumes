@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            /*padding: 1rem 2rem;*/
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e0f0ed;
+            width: 100%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image {
+
+        }
+
+        .brand-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .nav-button {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            background-color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .cart-icon {
+            font-size: 1.8rem;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 25px;
+            outline: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 1rem;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .category-button {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            background-color: white;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            padding: 0 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .description {
+            padding: 2rem;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .perfume-images {
+        height: auto;
+        width: 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        }
+
+        /*.perfume-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }*/
+
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-evenly;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-branding {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .footer-links h4 {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="\img\logo.png" alt="Aromashop Logo" class="logo-image">
+            </a>
+            <div>
+                <span class="brand-text" style="font-family: 'Limelight', cursive; font-size: 35px;">AROMASHOP</span>
+                <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+                
+            </div>
+        </div>
+        <nav class="nav-buttons">
+            <a href="login.html" class="nav-button" style="text-decoration: none; color: inherit;">Iniciar sesión</button></a>
+            <a href="register.html" class="nav-button" style="text-decoration: none; color: inherit;">Registrate</a>
+            <a href="categorias.html" class="nav-button" style="text-decoration: none; color: inherit;">Categorías</button></a>
+            <a href="checkout.html"><img src="\img\sc.png" alt="Perfumes" class="shoppingcar"></a>
+        </nav>
+    </header>
+
+    <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Buscar">
+    </div>
+
+    <div class="categories">
+        <a href="todosLosProductos.html" class="nav-button" style="text-decoration: none; color: inherit;">Todos los productos</button></a>
+        <a href="dama.html" class="nav-button" style="text-decoration: none; color: inherit;">Damas</button></a>
+        <a href="caballero.html" class="nav-button" style="text-decoration: none; color: inherit;">Caballeros</button></a>
+        <a href="unisex.html" class="nav-button" style="text-decoration: none; color: inherit;">Unisex</button></a>
+    </div>
+
+    <main class="main-content">
+        <div class="description">
+            <p>Descubre el poder de un perfume que habla por ti. En AROMASHOP, creemos que tu fragancia es una extensión de tu identidad. Explora nuestra selección de aromas exclusivos y encuentra el perfume que resulte tu esencia única. Desde notas frescas y vibrantes, hasta aromas cálidos y profundos, cada fragancia está pensada para acompañarte en cada momento de tu vida. ¡Deja que tu aroma hable por ti!</p>
+        </div>
+        <div class="perfume-images">
+            <img src="\img\perfumes1.png" alt="Perfumes collection 1" class="perfume-image">
+            <img src="\img\perfumes2.png" alt="Perfumes collection 2" class="perfume-image">
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-branding">
+                <div class="footer-brand">AROMASHOP</div>
+                <div class="tagline">TU ESENCIA Y TU SER</div>
+                <div class="social-icons">
+                <img src="\img\insta.png" alt="Instagram" class="social-icon">
+                <img src="\img\twitter.png" alt="Twitter" class="social-icon">
+                <img src="\img\fb.png" alt="Facebook" class="social-icon">
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>INFORMACIÓN</h4>
+                <a href="#">¿Cómo pagar?</a>
+                <a href="#">Preguntas frecuentes</a>
+                <a href="#">Política de envío</a>
+                <a href="#">Términos y condiciones</a>
+                <a href="#">Política de privacidad</a>
+                <a href="#">Política de devolución</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

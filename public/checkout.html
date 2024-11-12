@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aromashop - Checkout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            
+        }
+        .nav-button {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            background-color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e0f0ed;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .cart-icon {
+            font-size: 24px;
+        }
+
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            background-color: #e0e0e0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-radius: 4px;
+        }
+
+        .product-image {
+
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .product-details {
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            align-items: center;
+        }
+        .cart-table {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-spacing: 0;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .cart-table th {
+            text-align: center;
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .cart-table td {
+            padding: 15px;
+            vertical-align: middle;
+        }
+
+        
+        .coupon-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .progress-steps {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 100px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            border: 2px solid #000;
+        }
+
+        .form-section {
+            margin-top: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .update-cart {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #000;
+        }
+
+        .apply-coupon {
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #000;
+        }
+
+        .next-button {
+            background-color: #e8f4f1;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            float: right;
+        }
+
+
+        .back-button {
+            background-color: transparent;
+            color: #666;
+            text-decoration: underline;
+        }
+
+        .checkbox-group {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="\img\logo.png" alt="Aromashop Logo" class="logo-image">
+            </a>
+            <span class="brand-text" style="font-family: 'Limelight', cursive; font-size: 35px;">AROMASHOP</span>
+            <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+        </div>
+        <div>
+            <a href="categorias.html" class="nav-button" style="text-decoration: none; color: inherit;">Categorías</button></a>
+            <a href="checkout.html"><img src="\img\sc.png" alt="Perfumes" class="shoppingcar"></a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <h1 class="title">Pagar</h1>
+        
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div class="product-image-container">
+                                <img src="\img\perfumes\chk.png" alt="Cloud by Ariana Grande" class="product-image">
+                            </div>
+                            <div class="product-details">
+                                <p class="product-name">Cloud by Ariana Grande Unisex 80ml</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>$1,477.99</td>
+                    <td>1</td>
+                    <td>$1,477.99</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="coupon-section">
+            <input type="text" placeholder="Código de cupón">
+            <button class="apply-coupon">APLICAR CUPÓN</button>
+            <button class="update-cart">ACTUALIZAR CARRITO</button>
+        </div>
+
+        <div class="progress-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>FACTURACIÓN & ENVÍO</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>PEDIDO Y PAGO</div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Detalles de envío</h2>
+            <form>
+                <div class="form-group">
+                    <label>NOMBRE</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>APELLIDOS</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>NOMBRE DE LA EMPRESA (OPCIONAL)</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>PAÍS/REGIÓN</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>DIRECCIÓN DE LA CALLE</label>
+                    <input type="text" placeholder="NÚMERO DE LA CASA Y NOMBRE DE LA CALLE">
+                </div>
+                <div class="form-group">
+                    <label>COLONIA, APARTAMENTO/HABITACIÓN ETC. (OPCIONAL)</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>LOCALIDAD / CIUDAD</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>CÓDIGO POSTAL</label>
+                    <input type="text">
+                </div>
+                <div class="form-group">
+                    <label>TELÉFONO</label>
+                    <input type="text">
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="different-address">
+                    <label for="different-address">ENVÍA A UNA DIRECCIÓN DIFERENTE</label>
+                </div>
+
+                <div style="margin-top: 30px">
+                    <button class="nav-button" onclick="history.back()">Atrás</button>
+                    <a href="checkout2.html" class="next-button" style="text-decoration: none; color: inherit;">SIGUIENTE</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

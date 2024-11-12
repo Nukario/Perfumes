@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aromashop - Order Summary</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e0f0ed;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Cart table */
+        .cart-table {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-spacing: 0;
+            border-radius: 4px;
+            margin-bottom: 30px;
+        }
+
+        .cart-table th {
+            text-align: center;
+            padding: 15px;
+            border-bottom: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        .cart-table td {
+            padding: 15px;
+            vertical-align: middle;
+        }
+
+
+
+        .product-details {
+            display: flex;
+            gap: 15px;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-name {
+            color: #0066cc;
+            margin: 0;
+        }
+
+        .product-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin: 2px 0;
+        }
+
+        /* Actions section */
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 8px 20px;
+            border: 1px solid #000;
+            background-color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        /* Steps indicator */
+        .steps {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .step {
+            text-align: center;
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            background: white;
+        }
+
+        .steps::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            width: 200px;
+            height: 2px;
+            background-color: #00bcd4;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        /* Order summary */
+        .order-summary {
+            margin-top: 40px;
+        }
+
+        .order-summary h2 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .summary-table td {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .summary-table td:last-child {
+            text-align: right;
+        }
+
+        /* Payment options */
+        .payment-options {
+            margin-top: 30px;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .radio-input {
+            width: 20px;
+            height: 20px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .submit-button {
+            background-color: #e8f4f1;
+            padding: 10px 20px;
+        }
+
+        .back-button {
+            background-color: #e8f4f1;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="\img\logo.png" alt="Aromashop Logo" class="logo-image">
+            </a>
+            <span class="brand-text" style="font-family: 'Limelight', cursive; font-size: 35px;">AROMASHOP</span>
+            <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+        </div>
+        <div>
+            <a href="categorias.html" class="nav-button" style="text-decoration: none; color: inherit;">Categorías</button></a>
+            <a href="checkout.html"><img src="\img\sc.png" alt="Perfumes" class="shoppingcar"></a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <h1 class="title">Pagar</h1>
+        
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="product-details">
+                            <img src="\img\perfumes\chk.png" alt="Cloud perfume" class="product-image">
+                            <div class="product-info">
+                                <p class="product-name">Cloud</p>
+                                <p class="product-subtitle">by Ariana Grande</p>
+                                <p class="product-subtitle">Unisex 80ml</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>$1,477.99</td>
+                    <td>1</td>
+                    <td>$1,477.99</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="actions">
+            <input type="text" placeholder="Código de cupón">
+            <button>APLICAR CUPÓN</button>
+            <button>ACTUALIZAR CARRITO</button>
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>FACTURACIÓN & ENVÍO</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>PEDIDO Y PAGO</div>
+            </div>
+        </div>
+
+        <div class="order-summary">
+            <h2>Tu pedido</h2>
+            <table class="summary-table">
+                <tr>
+                    <td>PRODUCTO</td>
+                    <td>SUBTOTAL</td>
+                </tr>
+                <tr>
+                    <td>Cloud by Ariana Grande Unisex 80ml</td>
+                    <td>$1,477.99</td>
+                </tr>
+                <tr>
+                    <td>SUBTOTAL</td>
+                    <td>$1,477.99</td>
+                </tr>
+                <tr>
+                    <td>ENVÍO</td>
+                    <td>$25</td>
+                </tr>
+                <tr>
+                    <td>IVA</td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td><strong>TOTAL</strong></td>
+                    <td><strong>$1,552.99</strong></td>
+                </tr>
+            </table>
+
+            <div class="payment-options">
+                <div class="payment-option">
+                    <input type="radio" name="payment" class="radio-input">
+                    <label>Pago con tarjeta de crédito y débito</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="payment" class="radio-input">
+                    <label>PayPal</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="payment" class="radio-input">
+                    <label>Pago con transferencia interbancaria vía SPE</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="payment" class="radio-input">
+                    <label>Pago en efectivo en tiendas de conveniencia</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="payment" class="radio-input">
+                    <label>Elige cuántas quincenas, sin tarjeta de crédito</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" name="payment" class="radio-input">
+                    <label>Compras con tarjetas guardadas o saldo en Mercado Pago</label>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="nav-button" onclick="history.back()">Atrás</button>
+                <button class="submit-button">REALIZAR EL PEDIDO</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

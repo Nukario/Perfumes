@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AROMA SHOP - Todos los productos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        .nav-button {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            background-color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #e0f2f1;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .brand-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .hero-banner {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-title {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 2.5rem;
+            color: black;
+            border-bottom: 3px solid black;
+            padding-bottom: 5px;
+        }
+
+        .search-container {
+            padding: 1rem 2rem;
+        }
+
+        .search-bar {
+            width: 200px;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            
+            background-repeat: no-repeat;
+            background-position: 95% center;
+            padding-right: 30px;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .filters {
+            width: 200px;
+        }
+
+        .filter-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .filter-title {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .filter-button {
+            padding: 0.3rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            background-color: white;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .products-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-title {
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+
+        .product-brand {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .product-category {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .star-rating {
+            color: gold;
+            margin: 0.5rem 0;
+        }
+
+        .price-filter {
+            margin-bottom: 1rem;
+        }
+
+        .price-option {
+            display: block;
+            margin: 0.5rem 0;
+            color: #666;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            background-color: white;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+
+            .filters {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="\img\logo.png" alt="Aromashop Logo" class="logo-image">
+            </a>
+            <span class="brand-text" style="font-family: 'Limelight', cursive; font-size: 35px;">AROMASHOP</span>
+            <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+        </div>
+        <div>
+            <a href="categorias.html" class="nav-button" style="text-decoration: none; color: inherit;">Categorías</button></a>
+            <a href="checkout.html"><img src="\img\sc.png" alt="Perfumes" class="shoppingcar"></a>
+        </div>
+    </header>
+
+    <div class="hero-banner">
+        <img src="\img\banner.png" alt="Perfumes banner">
+        <h1 class="hero-title">Todos los productos</h1>
+    </div>
+
+    <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Buscar">
+    </div>
+
+    <main class="main-content">
+        <aside class="filters">
+            <div class="filter-section">
+                <h3 class="filter-title">Filtro</h3>
+                <div class="filter-options">
+                    <a href="dama.html" class="nav-button" style="text-decoration: none; color: inherit;">Dama</button></a>
+                    <a href="caballero.html" class="nav-button" style="text-decoration: none; color: inherit;">Caballero</button></a>
+                    <a href="unisex.html" class="nav-button" style="text-decoration: none; color: inherit;">Unisex</button></a>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3 class="filter-title">Esencias/Notas</h3>
+                <div class="filter-options">
+                    <button class="filter-button">Floral</button>
+                    <button class="filter-button">Amaderado</button>
+                    <button class="filter-button">Cítrico</button>
+                    <button class="filter-button">Frutal</button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3 class="filter-title">Marcas</h3>
+                <div class="filter-options">
+                    <button class="filter-button">Dolce & Gabbana</button>
+                    <button class="filter-button">Versace</button>
+                    <button class="filter-button">Estée Lauder</button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h3 class="filter-title">Precio</h3>
+                <div class="price-filter">
+                    <label class="price-option">$1000-2000</label>
+                    <label class="price-option">$3000-4000</label>
+                    <label class="price-option">$5000-6000</label>
+                </div>
+            </div>
+        </aside>
+
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="\img\perfumes\p1.png" alt="Bright Crystal" class="product-image">
+                <h3 class="product-title">Bright Crystal</h3>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="product-brand">by Versace</p>
+                <p class="product-category">Dama</p>
+            </div>
+
+            <div class="product-card">
+                <img src="\img\perfumes\p2.png" alt="Pleasures" class="product-image">
+                <h3 class="product-title">Pleasures</h3>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="product-brand">by Estée Lauder</p>
+                <p class="product-category">Dama</p>
+            </div>
+
+            <div class="product-card">
+                <img src="\img\perfumes\p3.png" alt="Cool Water" class="product-image">
+                <h3 class="product-title">Cool Water</h3>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="product-brand">by Davidoff</p>
+                <p class="product-category">Dama</p>
+            </div>
+
+            <div class="product-card">
+                <img src="\img\perfumes\p4.png" alt="Bright Crystal" class="product-image">
+                <h3 class="product-title">Bright Crystal</h3>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="product-brand">by Versace</p>
+                <p class="product-category">Caballero</p>
+            </div>
+
+            <div class="product-card">
+                <img src="\img\perfumes\p5.png" alt="Pleasures" class="product-image">
+                <h3 class="product-title">Pleasures</h3>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="product-brand">by Estée Lauder</p>
+                <p class="product-category">Caballero</p>
+            </div>
+
+            <div class="product-card">
+                <img src="\img\perfumes\p6.png" alt="Cool Water" class="product-image">
+                <h3 class="product-title">Cool Water</h3>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="product-brand">by Davidoff</p>
+                <p class="product-category">Caballero</p>
+            </div>
+            
+            <div class="product-card">
+                <img src="\img\perfumes\p7.png" alt="Bright Crystal" class="product-image">
+                <h3 class="product-title">Bright Crystal</h3>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="product-brand">by Versace</p>
+                <p class="product-category">Unisex</p>
+            </div>
+
+            <div class="product-card">
+                <img src="\img\perfumes\p8.png" alt="Pleasures" class="product-image">
+                <h3 class="product-title">Pleasures</h3>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="product-brand">by Estée Lauder</p>
+                <p class="product-category">Unisex</p>
+            </div>
+
+            <div class="product-card">
+                <img src="\img\perfumes\p9.png" alt="Cool Water" class="product-image">
+                <h3 class="product-title">Cool Water</h3>
+                <div class="star-rating">⭐⭐⭐⭐⭐</div>
+                <p class="product-brand">by Davidoff</p>
+                <p class="product-category">Unisex</p>
+            </div>
+            <!-- Add more product cards as needed -->
+        </div>
+        
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>AROMASHOP</h3>
+                <p>TU ESENCIA Y TU SER</p>
+                <div class="social-links">
+                    <img src="\img\insta.png" alt="Instagram">
+                    <img src="\img\twitter.png" alt="Twitter">
+                    <img src="\img\fb.png" alt="Facebook">
+                </div>
+            </div>
+            <div>
+                <h4>INFORMACIÓN</h4>
+                <ul class="footer-links">
+                    <li>¿Cómo comprar?</li>
+                    <li>Preguntas frecuentes</li>
+                    <li>Política de envío</li>
+                    <li>Términos y condiciones</li>
+                    <li>Política de privacidad</li>
+                    <li>Política de devolución</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
